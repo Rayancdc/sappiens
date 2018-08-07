@@ -6,7 +6,7 @@ COMMANDS FOR THE ENTIRE TEAM:
 bundle install
 yarn install
 rails generate simple_form:install --bootstrap
-rails generate devise:install
 touch .env
 touch config/master.key
+rails db:drop db:create db:migrate
 ```
