@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_223122) do
+ActiveRecord::Schema.define(version: 2018_08_07_165736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "field_1"
+    t.string "field_2"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "experience_id"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["experience_id"], name: "index_bookings_on_experience_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_companies_on_address_id"
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.bigint "company_id"
+    t.string "name"
+    t.text "description"
+    t.date "date"
+    t.integer "price_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_experiences_on_company_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +69,15 @@ ActiveRecord::Schema.define(version: 2018_08_06_223122) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "cellphone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "experiences"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "companies", "addresses"
+  add_foreign_key "companies", "users"
+  add_foreign_key "experiences", "companies"
 end
