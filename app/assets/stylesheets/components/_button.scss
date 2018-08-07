@@ -1,0 +1,16 @@
+.btn-purple {
+  background: $dark-blue;
+  transition: all 0.3s ease;
+  padding: 12px 16px;
+  height: 48px;
+  margin: 8px;
+  color: white;
+  font-family: $body-font;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  &:hover {
+    background-color: darken($dark-blue, 2%);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,59 @@
+.test-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 20px 10px ;
+  position: relative;
+  box-shadow: 1px 1px 1px 1px rgba(50, 50, 50, 0.3);
+}
+
+.test-card-content {
+  height: 250px;
+}
+.test-card-description {
+  overflow: hidden;
+  max-height: 110px;
+}
+
+.test-card-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px
+}
+
+.card-body {
+  padding:30px;
+  position: relative;
+}
+
+.trash {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1,5em;
+  color: $purple;
+  opacity: 0.8;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.pencil {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  font-size: 1,5em;
+  color: $purple;
+  opacity: 0.8;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.list-inline {
+  padding-left: 0px;
+}
+
+
