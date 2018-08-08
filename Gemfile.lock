@@ -76,6 +76,8 @@ GEM
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     ffi (1.9.25)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
@@ -236,6 +238,7 @@ DEPENDENCIES
   carrierwave
   devise
   dotenv-rails
+  faker
   fog-aws
   font-awesome-sass
   jbuilder (~> 2.5)
