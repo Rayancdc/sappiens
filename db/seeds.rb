@@ -6,10 +6,10 @@ User.delete_all
 
 puts "Generating Users"
 USERS = [
-	{name: 'Rayan', email: 'rayancdc@gmail.com' },
-	{name: 'Edu', email: 'edu@gmail.com' },
-	{name: 'Riza', email: 'riza@gmail.com' },
-	{name: 'Fernando', email: 'fernando@gmail.com' },
+	{ name: 'Rayan', email: 'rayancdc@gmail.com' },
+	{ name: 'Edu', email: 'edu@gmail.com' },
+	{ name: 'Riza', email: 'riza@gmail.com' },
+	{ name: 'Fernando', email: 'fernando@gmail.com' },
 ]
 USERS.each do |user|
   User.create!(email: user[:email], password: "123456", name: user[:name])
@@ -17,6 +17,7 @@ end
 
 puts "Generating Companies"
 COMPANIES = %w(iFood Spotify Meliuz Itau Airbnb HortaLab Rappi Supercell Google Facebook Bradesco TripAdvisor NuBank sAppiens)
+
 
 COMPANIES.each do |company|
 	new_user = User.create!(email: "#{company.downcase}@#{company.downcase}.com", password: "sAppiens", name: company)
@@ -31,7 +32,7 @@ COMPANIES.each do |company|
 end
 
 
-10.times do 
+10.times do
 	user = User.all.sample
 	experience = Experience.all.sample
 
