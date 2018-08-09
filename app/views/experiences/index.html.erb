@@ -11,8 +11,8 @@
           <div class="message-body">
            <p><strong>@ Google</strong></p>
            <p>
-              Experience Python, MongoDB and more as one of the most promissing 
-              carrer of this century. Book today! 
+              Experience Python, MongoDB and more as one of the most promissing
+              carrer of this century. Book today!
           </p>
           </div>
           <div class="message-status">
@@ -21,7 +21,7 @@
           </div>
           </div>
           <div class="container">
-          <ul class="card">	
+          <ul class="card">
 		  </li>
           <li class="message">
           <%= image_tag 'Web.jpg', class: 'avatar-large' %>
@@ -32,8 +32,8 @@
           <div class="message-body">
             <p><strong>@ Adobe</strong></p>
             <p>
-              Experience the day of as a web developer and get insights about CSS, HTML, Javascript fundamentals and more. 
-				Book this day now! 
+              Experience the day of as a web developer and get insights about CSS, HTML, Javascript fundamentals and more.
+				Book this day now!
             </p>
           </div>
           <div class="message-status">
@@ -43,7 +43,7 @@
           </div>
           </div>
           <div class="container">
-          <ul class="card"> 
+          <ul class="card">
           </li>
           <li class="message">
           <%= image_tag 'UX.jpg', class: 'avatar-large' %>
@@ -54,7 +54,7 @@
           <div class="message-body">
             <p><strong>@ YouTube</strong></p>
             <p>
-              Experience a day as an UX Designer and learn how the best UX designers are creating new usabilities tools & metrics. Book today! 
+              Experience a day as an UX Designer and learn how the best UX designers are creating new usabilities tools & metrics. Book today!
             </p>
           </div>
           <div class="message-status">
@@ -63,5 +63,12 @@
           </div>
          </li>
          </ul>
+
+         <div
+          id="map"
+          style="width: 100%;
+          height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+        ></div>
 
          </div>
