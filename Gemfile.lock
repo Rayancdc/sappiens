@@ -98,6 +98,7 @@ GEM
     font-awesome-sass (5.2.0)
       sassc (>= 1.11)
     formatador (0.2.5)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -245,6 +246,7 @@ DEPENDENCIES
   faker
   fog-aws
   font-awesome-sass
+  geocoder
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
