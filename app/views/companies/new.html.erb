@@ -1,0 +1,6 @@
+<h1>Create a new company for <%= current_user.name %></h1>
+<%= simple_form_for [current_user, @company] do |f| %>
+<%= f.input :name %>
+<%= f.association :address, label_method: :field_1 %>
+<%= f.submit %>
+<% end %> 
