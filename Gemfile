@@ -23,10 +23,10 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'geocoder'
 gem 'pg_search'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'faker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
 end
