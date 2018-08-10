@@ -11,7 +11,7 @@
 
     <% if user_signed_in? %>
 
-      <%= link_to "Homepage", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "I'm a company", new_user_company_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
         <span class="navbar-wagon-item navbar-wagon-link dropdown">
