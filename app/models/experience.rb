@@ -1,7 +1,8 @@
 class Experience < ApplicationRecord
 
   belongs_to :company
-  has_many :bookings, dependent: :destroy
+  has_many :events, dependent: :destroy
+  has_many :bookings, through: :events
   has_many :users, through: :bookings
 
   validates :name, presence: true
