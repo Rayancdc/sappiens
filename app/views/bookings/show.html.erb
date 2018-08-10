@@ -8,6 +8,6 @@
 			<p><em>An experience by <%= @booking.experience.company.name %></em></p>
 			<p>Your price paid is <%=@booking.experience.price_cents %></p>
 			<p>Your date is scheduled <%=@booking.experience.date %></p>
-			<%= link_to my_experiences_users_path(@experience), method: :post do %><button type="button" class="btn btn-primary">Go to My Experiences</button> <% end %>
+			<%= link_to my_experiences_users_path(@experience), method: :get do %><button type="button" class="btn btn-primary">Go to My Experiences</button> <% end %>
 		</div>
 	</div>

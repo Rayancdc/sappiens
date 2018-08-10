@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def my_experiences
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def edit_profile
