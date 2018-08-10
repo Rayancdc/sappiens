@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :experiences
+  resources :experiences do
+    resources :bookings, shallow: true
+  end
 end
