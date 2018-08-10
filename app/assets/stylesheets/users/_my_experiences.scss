@@ -1,7 +1,7 @@
 .card {
   background-size: cover;
   background-position: center;
-  height: 175px;
+  height: 195px;
   border-radius: 2px;
   margin: 15px 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -13,6 +13,19 @@
   background-color: #006080;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.ratings {
+
+  position: absolute;
+  right: 5px;
+  bottom: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 80%;
+  font-size: 13px;
+  color: grey;
+
 }
 
 .avatar-large {
