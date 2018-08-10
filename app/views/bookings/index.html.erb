@@ -2,18 +2,18 @@
 
   <div class="exp-container">
     <div class="row">
-      <% if @experiences.count > 0 %>
-        <% @experiences.each do |experience| %>
+      <% if @bookings.count > 0 %>
+        <% @bookings.each do |booking| %>
           <div class="col-md-12">
             <div class="experience-card">
               <div class="card-image"></div>
               <div class="card-info">
-                <h2> <%= experience.name %></h2>
-                <p> <%= experience.company.name %> </p>
+                <h2> <%= booking.experience.name %></h2>
+                <p> <%= booking.experience.company.name %> </p>
               </div>
               <div class="card-price">
-                <strong><%= number_to_currency(experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
-                <%= link_to "More Info", experience_path(experience), class: "btn btn-success" %>
+                <strong><%= number_to_currency(booking.experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
+                <%= link_to "More Info", booking_path(booking), class: "btn btn-success" %>
               </div>
 
 
@@ -22,7 +22,7 @@
         <% end %>
       <% else %>
         <div class="sorry-box">
-          <h2>Sorry, we coudn't find any experiences for <%= params[:query] %> </h2>
+          <h2>Sorry, we coudn't find any bookings for <%= params[:query] %> </h2>
         </div>
       <% end %>
     </div>
