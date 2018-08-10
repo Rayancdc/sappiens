@@ -6,9 +6,17 @@
         <% @experiences.each do |experience| %>
           <div class="col-md-12">
             <div class="experience-card">
-              <h2> <%= experience.name %></h2>
-              <p> <%= experience.company.name %> </p>
-              <%= link_to "More Info", experience_path(experience), class: "btn btn-success" %>
+              <div class="card-image"></div>
+              <div class="card-info">
+                <h2> <%= experience.name %></h2>
+                <p> <%= experience.company.name %> </p>
+              </div>
+              <div class="card-price">
+                <strong><%= number_to_currency(experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
+                <%= link_to "More Info", experience_path(experience), class: "btn btn-success" %>
+              </div>
+
+
             </div>
           </div>
         <% end %>
