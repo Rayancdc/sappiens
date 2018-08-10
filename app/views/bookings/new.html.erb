@@ -1,5 +1,18 @@
-<h2>Booking confirmation</h2>
-<p><%= current_user.name %>, do you confirm your booking for the <%= @experience.name %> experience? </p>
-<p><%= @experience.description %>	
-</p>
-<%= link_to experience_bookings_path(@experience), method: :post do %><button type="button" class="btn btn-primary">Pay</button> <% end %>
+<div class="container">
+	<div class="booking-title">
+		<h3> 1- Analyze experiences info 2- Confirm and pay </h3>
+	</div>
+	<div class="box-new"> 	
+		<div class="experience-details">
+			<h2><%= @experience.name %></h2>
+			<p><em>An experience by <%= @experience.company.name %></em></p>
+			<p><%= @experience.description %></p>
+			<%= link_to experience_bookings_path(@experience), method: :post do %><button type="button" class="btn btn-primary">Pay</button> <% end %>
+		</div>
+		<div class="booking-details">
+			<h2>Book now for <strong><%= @experience.date %></strong></h2>
+			<p>Fee:<%= @experience.price_cents %> </p>
+			<!-- TODO how to set a price format money gem currency -->
+		</div>
+	</div>
+</div>
