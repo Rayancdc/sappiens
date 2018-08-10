@@ -9,11 +9,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
-  
+
 private
 
   def send_welcome_email
-    UserMailer.welcome(self).deliver_now
+    # UserMailer.welcome(self).deliver_now
   end
 
 

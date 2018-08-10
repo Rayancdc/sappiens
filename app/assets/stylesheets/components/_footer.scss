@@ -1,12 +1,14 @@
 .footer {
-  background: $black;
+  background: $blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
   padding: 0px 50px;
   color: rgba(230, 230, 230, 0.7);
+  z-index: 1000;
 }
+
 .footer-links {
   display: flex;
   align-items: center;

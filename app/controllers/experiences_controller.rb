@@ -6,7 +6,11 @@ class ExperiencesController < ApplicationController
   end
 
   def index
-    @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @experiences = Experience.where.not(latitude: nil, longitude: nil).global_search(params[:query])
+    else
+      @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @experiences.map do |experience|
       {

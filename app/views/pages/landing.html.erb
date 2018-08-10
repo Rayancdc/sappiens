@@ -5,13 +5,9 @@
     <div class="search-wrapper text-center">
       <%= form_tag experiences_path, method: :get, class: 'form-inline' do %>
         <div class="form-group">
-          <%= search_field_tag :city, params[:city],
-            placeholder: 'São Paulo',
-            size: 25,
-            class: 'form-control searchTerm' %>
-          <%= search_field_tag :career, params[:career],
-          placeholder: 'Product Manager',
-          size: 25,
+          <%= search_field_tag :query, params[:query],
+          placeholder: 'Try Product Manager',
+          size: 60,
           class: 'form-control searchTerm' %>
           <div class="search-btn">
             <button type="submit" class="searchButton">
