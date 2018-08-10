@@ -1,7 +1,19 @@
-<div class="wrapper aligned">
-    <div class="box item1">One</div>
-    <div class="box item2">Two</div>
-    <div class="box item3">Three</div>
-    <div class="box item4">Four</div>
-    <div class="box item5">Five</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4">
+			<!-- insert <div class="card"> --> 
+			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+				<div class="card-category"><%= @experience.name %></div>
+				<div class="card-description">
+					<h2><%= @experience.company.name %></h2>
+					<p><%= @experience.description %></p>
+				</div>
+				<img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+				<a class="card-link" href="#" ></a>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="container"> <%= link_to new_experience_booking_path(@experience) do %><button type="button" class="btn btn-primary">Book</button> <% end %>
+</div>
+
