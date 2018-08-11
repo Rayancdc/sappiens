@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :dashboard
       get :edit_profile
       patch :update_profile
+      get :update_profile
       get :my_experiences
       get :invite_friends
     end
