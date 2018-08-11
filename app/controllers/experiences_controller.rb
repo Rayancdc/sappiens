@@ -2,9 +2,6 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!
 
-  def dashboard
-  end
-
   def index
     if params[:query].present?
       @experiences = Experience.where.not(latitude: nil, longitude: nil).global_search(params[:query])
