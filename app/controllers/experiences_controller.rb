@@ -7,15 +7,15 @@ class ExperiencesController < ApplicationController
 
   def index
     if params[:query].present?
-      @experiences = Experience.where.not(latitude: nil, longitude: nil).global_search(params[:query])
+      @experiences = Experience.joins(:company).where.not(latitude: nil, longitude: nil).global_search(params[:query])
     else
-      @experiences = Experience.where.not(latitude: nil, longitude: nil)
+      @experiences = Experience.joins(:company).where.not(latitude: nil, longitude: nil)
     end
 
     @markers = @experiences.map do |experience|
       {
-        lat: experience.latitude,
-        lng: experience.longitude#,
+        lat: experience.company.latitude,
+        lng: experience.company.longitude#,
         # infoWindow: { content: render_to_string(partial: "/experiences/map_box", locals: { experience: experience }) }
       }
     end

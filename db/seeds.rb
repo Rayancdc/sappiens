@@ -20,9 +20,8 @@ USERS = [
 
 USERS.each_with_index do |user, i|
   new_user = User.create!(email: user[:email], password: "sappiens", name: user[:name])
-  new_address = Address.create!(field_1: Faker::Address.street_address, city: Faker::Address.city_prefix, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
-  new_company = Company.create!(name: COMPANIES.sample, user: new_user, address: new_address)
-  new_experience = new_company.experiences.build(address: ADDRESSES[i], name: CAREERS.sample, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit dignissimos repellendus, quibusdam rem natus ut quo, aliquam reiciendis odio non, maxime blanditiis eaque, et. Veritatis quaerat similique eum! Laborum.", date: Faker::Date.forward(23), price_cents: rand(300..10000) )
+  new_company = Company.create!(name: COMPANIES.sample, user: new_user, address: ADDRESSES[i])
+  new_experience = new_company.experiences.build(career: CAREERS.sample, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit dignissimos repellendus, quibusdam rem natus ut quo, aliquam reiciendis odio non, maxime blanditiis eaque, et. Veritatis quaerat similique eum! Laborum.", date: Faker::Date.forward(23), price_cents: rand(300..10000) )
   new_experience.save
 end
 
