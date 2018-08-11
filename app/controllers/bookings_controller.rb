@@ -16,8 +16,10 @@ class BookingsController < ApplicationController
 	def create
   	@booking = Booking.new
   	@booking.user = current_user
-  	@booking.experience = Experience.find(params[:experience_id])
+  	@booking.event = Event.find(params[:event_id])
   	if @booking.save
+      BookingMailer.creation_confirmation_company(@booking).deliver_now
+      BookingMailer.creation_confirmation(@booking).deliver_now
   		redirect_to booking_path(@booking)
   	else
   		render :new
@@ -28,7 +30,7 @@ class BookingsController < ApplicationController
 
 	# def booking_params
 	# 	params.require(:booking).permit()
-		
+
 	# end
 
 end
