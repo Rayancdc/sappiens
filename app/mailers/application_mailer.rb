@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'sappiens@sappiens.app'
+  default from: 'sappiens.mailer@gmail.com'
 
   layout 'mailer'
 end
