@@ -1,0 +1,52 @@
+.exp-banner {
+  display: flex;
+  height: 30vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-start;
+  background-position: center;
+  background-size: cover;
+  color: $orange;
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.exp-banner-content {
+  margin-left: 100px;
+}
+
+
+.flex-wrapper-exp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  min-height: 300px;
+
+}
+
+.exp-info {
+  flex: 1 1 auto;
+  padding: 24px;
+  margin: 24px;
+  background-color: $light-gray;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  align-items: left;
+  flex-direction: column;
+  height: 100%;
+}
+
+.exp-dates {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  margin: 50px;
+  background-color: $light-gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}

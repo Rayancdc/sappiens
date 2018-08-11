@@ -19,6 +19,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    @event = @experience.events.first
   end
 
   def new
