@@ -7,9 +7,9 @@ class ExperiencesController < ApplicationController
 
   def index
     if params[:query].present?
-      @experiences = Experience.joins(:company).where.not(latitude: nil, longitude: nil).global_search(params[:query])
+      @experiences = Experience.global_search(params[:query])
     else
-      @experiences = Experience.joins(:company).where.not(latitude: nil, longitude: nil)
+      @experiences = Experience.all
     end
 
     @markers = @experiences.map do |experience|

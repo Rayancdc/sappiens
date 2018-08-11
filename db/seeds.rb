@@ -1,4 +1,5 @@
 Booking.delete_all
+Event.delete_all
 Experience.delete_all
 Company.delete_all
 User.delete_all
@@ -18,23 +19,28 @@ USERS = [
   { name: 'Fernando', email: 'fernando@gmail.com' }
 ]
 
+
 USERS.each_with_index do |user, i|
   new_user = User.create!(email: user[:email], password: "sappiens", name: user[:name])
-  new_company = Company.create!(name: COMPANIES.sample, user: new_user, address: ADDRESSES[i])
-  new_experience = new_company.experiences.build(career: CAREERS.sample, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit dignissimos repellendus, quibusdam rem natus ut quo, aliquam reiciendis odio non, maxime blanditiis eaque, et. Veritatis quaerat similique eum! Laborum.", date: Faker::Date.forward(23), price_cents: rand(300..10000) )
+  new_company = Company.create!(name: COMPANIES[i], user: new_user, address: ADDRESSES[i])
+  new_experience = new_company.experiences.build(career: CAREERS.sample, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit dignissimos repellendus, quibusdam rem natus ut quo, aliquam reiciendis odio non, maxime blanditiis eaque, et. Veritatis quaerat similique eum! Laborum.", price_cents: rand(300..10000) )
   new_experience.save
+  (1..4).each do |num|
+    new_event = new_experience.events.build(date: num.day.from_now)
+    new_event.save
+  end
 end
 
 5.times do
   user = User.all.sample
-  experience = Experience.all.sample
+  event = Event.all.sample
 
-  booking = Booking.new(user: user, experience: experience)
+  booking = Booking.new(user: user, event: event)
   booking.save
 end
 
 # puts "Generating Companies"
-puts "You have #{User.count} users, #{Company.count} companies, #{Experience.count} experiences and #{Booking.count} bookings"
+puts "You have #{User.count} users, #{Company.count} companies, #{Experience.count} experiences, #{Event.count} events and #{Booking.count} bookings"
 
 # COMPANIES.each do |company|
 # 	new_user = User.create!(email: "#{company.downcase}@#{company.downcase}.com", password: "sappiens", name: company)
