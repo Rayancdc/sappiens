@@ -22,7 +22,7 @@ USERS = [
 
 USERS.each_with_index do |user, i|
   new_user = User.create!(email: user[:email], password: "sappiens", name: user[:name])
-  new_company = Company.create!(name: COMPANIES[i], user: new_user, address: ADDRESSES[i])
+  new_company = Company.create!(name: COMPANIES[i]  , user: new_user, address: ADDRESSES[i])
   new_experience = new_company.experiences.build(career: CAREERS.sample, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit dignissimos repellendus, quibusdam rem natus ut quo, aliquam reiciendis odio non, maxime blanditiis eaque, et. Veritatis quaerat similique eum! Laborum.", price_cents: rand(300..10000) )
   new_experience.save
   (1..4).each do |num|
