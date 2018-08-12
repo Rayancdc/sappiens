@@ -4,6 +4,7 @@ import { loadDynamicBannerText } from '../components/banner';
 import { setStickyFooter } from '../components/footer';
 import { autocomplete } from '../components/autocomplete';
 
+console.log('webpacker');
 autocomplete();
 
 initUpdateNavbarOnScroll();
