@@ -1,18 +1,15 @@
 <div class="container">
 	<div class="booking-title">
-		<h3> 1- Analyze experiences info 2- Confirm and pay </h3>
+		<h2> 1- Analyze experiences info 2- Confirm and pay </h2>
 	</div>
-	<div class="box-new"> 	
-		<div class="experience-details">
-			<h2><%= @experience.name %></h2>
-			<p><em>An experience by <%= @experience.company.name %></em></p>
-			<p><%= @experience.description %></p>
-			<%= link_to experience_bookings_path(@experience), method: :post do %><button type="button" class="btn btn-primary">Pay</button> <% end %>
-		</div>
-		<div class="booking-details">
-			<h2>Book now for <strong><%= @experience.date %></strong></h2>
-			<p>Fee:<%= @experience.price_cents %> </p>
-			<!-- TODO how to set a price format money gem currency -->
-		</div>
-	</div>
+	<div class="book-info" ></div>
+		<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
+		<h5> <%= @experience.career %> </h5>
+		<h5> <%= @experience.company.name %> </h5>
+		<h5> <%= @experience.description %> </h5>
+		<h5> We need to change this <%= @experience.events.first.date %> </h5>
+		<h5> <%= @experience.company.address %> </h5>
+		<div class="exp-dates">
+    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
+    <%= link_to booking_path(@experience), method: :get do %><button type="button" class="btn btn-primary">Pay</button> <% end %>
 </div>
