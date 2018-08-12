@@ -1,5 +1,4 @@
-<h1> Welcome to sAppiens <%= @user.name %>, the journey to your future </h1>
+<h3><%= @user.name %>, welcome to sAppiens!! </h3>
 
-<p> You are very important ...
-  
-</p>
+<p> Click the link below for the lastest opportunities to find out more about your future profession! </p>
+<%= link_to "Careers", experiences_url, class: "btn btn-success" %>
