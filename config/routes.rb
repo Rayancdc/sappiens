@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :dashboard
       get :edit_profile
       patch :update_profile
+      get :update_profile
       get :my_experiences
       get :invite_friends
     end
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :bookings, shallow: true, except: :index
+    collection do
+      get :guidelines
+    end
   end
 
   resources :bookings, only: :index

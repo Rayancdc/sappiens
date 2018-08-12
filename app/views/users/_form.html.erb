@@ -1,4 +1,5 @@
-<%= simple_form_for @user, url: update_profile_users_path do |f| %>
-  <%= f.input :email %>
+	<%= simple_form_for @user, url: update_profile_users_path do |f| %>
+  <%= f.input :name %>
+  <%= f.input :cellphone %>
   <%= f.button :submit, class: "btn btn-purple" %>
 <% end %>
