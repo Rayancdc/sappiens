@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :experiences do
     resources :bookings, shallow: true, except: :index
+    collection do
+      get :guidelines
+    end
   end
 
   resources :bookings, only: :index
