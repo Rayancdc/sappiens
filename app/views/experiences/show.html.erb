@@ -1,1 +1,22 @@
+<div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
+  <% if @experience.image %>
+    <%= @experience.image.url %>
+  <% else %>
+    <%= image_path('bannersun.jpg') %>
+  <% end %>);">
+  <div class="exp-banner-content">
+    <h1> <%= @experience.career %> </h1>
+  </div>
+</div>
 
+<div class="flex-wrapper-exp">
+  <div class="exp-info">
+    <h2><%= @experience.company.name %></h2>
+    <h3><%= @experience.career %></h3>
+    <p><%= @experience.description %></p>
+  </div>
+  <div class="exp-dates">
+    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
+    <%= link_to "Book now", new_experience_event_booking_path(@experience, @event), class: "btn btn-success" %>
+  </div>
+</div>
