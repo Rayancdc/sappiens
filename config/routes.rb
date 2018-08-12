@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       patch :update_profile
       get :update_profile
       get :my_experiences
+      get :my_bookings
       get :invite_friends
     end
   end
