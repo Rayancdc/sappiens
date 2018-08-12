@@ -7,17 +7,17 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+console.log('Hello World from Webpacker');
 
 import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 import { setStickyFooter } from '../components/footer';
 import { autocomplete } from '../components/autocomplete';
-import { setCalendar } from '../components/calendar'; c
-onsole.log("hello from webpacker");
 
-setCalendar();
+console.log("hello from webpacker");
+
+// setCalendar();
 
 autocomplete();
 
