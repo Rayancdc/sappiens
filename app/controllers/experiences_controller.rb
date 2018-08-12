@@ -1,6 +1,7 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!
+  attr_accessor :date
 
   def index
     if params[:query].present?
@@ -32,6 +33,8 @@ class ExperiencesController < ApplicationController
   def create
     @company = current_user.company
     @experience = @company.experiences.build(experience_params)
+    event_dates = params[:experience][:date].split(', ')
+    create_events(event_dates)
     if @experience.save
       redirect_to experience_path(@experience)
     else
@@ -54,11 +57,19 @@ class ExperiencesController < ApplicationController
   end
 
   private
+  def create_events(event_dates)
+    event_dates.each do |string_date|
+      date = string_date.to_date.in_time_zone
+      event = @experience.events.build(date: date)
+      event.save
+    end
+  end
+
   def set_experience
     @experience = Experience.find(params[:id])
   end
 
   def experience_params
-    params.require(:experience).permit(:career, :price_cents, :description, :date)
+    params.require(:experience).permit(:career, :price_cents, :description)
   end
 end

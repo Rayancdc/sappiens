@@ -42,11 +42,14 @@
 .exp-dates {
   flex: 0 0 auto;
   width: 300px;
-  height: 300px;
   margin: 50px;
   background-color: $light-gray;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+
+.calendar-wrapper {
+  margin: 10px;
 }

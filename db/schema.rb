@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 2018_08_11_225356) do
   create_table "experiences", force: :cascade do |t|
     t.bigint "company_id"
     t.text "description"
-    t.date "date"
     t.integer "price_cents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "career"
     t.string "image"
+    t.date "date"
     t.index ["company_id"], name: "index_experiences_on_company_id"
   end
 
