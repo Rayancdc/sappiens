@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   		render :new
   	end
 	end
+    
 
 	private
 

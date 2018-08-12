@@ -6,16 +6,23 @@
                         <%= @user.email %>
                     </a>
                 </li>
-                <li>
+                
+                    <% if @user.company %>
+                    <li>
                     <em><%= link_to @user.company.name, '#' %></em>
-                </li>
-                </li>
+                    </li>
+                    <% end %>
+                
+                
                 <li>
                     <%= link_to 'Edit Profile', edit_profile_users_path %>
                 </li>
                 <li>
-                    <%= link_to 'My Experiences', my_experiences_users_path if @user.company %>
-                    <%= link_to 'My Bookings', bookings_path unless @user.company %>
+                    <% if @user.company %>
+                    <%= link_to 'My Experiences', my_experiences_users_path %>
+                    <% else %>
+                    <%= link_to 'My Bookings', my_bookings_users_path %>
+                    <% end %>
                 </li>
                 <li>
                     <%= link_to 'Invite friends', invite_friends_users_path %>
