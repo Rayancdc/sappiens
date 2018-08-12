@@ -18,6 +18,9 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def guidelines
+  end
+
   def show
     @event = @experience.events.first
   end
@@ -27,8 +30,8 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @experience = @user.experiences.build(experience_params)
+    @company = current_user.company
+    @experience = @company.experiences.build(experience_params)
     if @experience.save
       redirect_to experience_path(@experience)
     else
@@ -56,6 +59,6 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    params.require(:experience).permit()
+    params.require(:experience).permit(:career, :price_cents, :description, :date)
   end
 end

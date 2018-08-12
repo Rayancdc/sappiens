@@ -1,0 +1,7 @@
+	<%= simple_form_for @experience, url: experiences_path do |f| %>
+  <%= f.input :career %>
+  <%= f.input :description %>
+  <%= f.input :date %>
+  <%= f.input :price_cents %>
+  <%= f.button :submit, class: "btn btn-purple" %>
+<% end %>
