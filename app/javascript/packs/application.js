@@ -25,5 +25,6 @@ let names = ["Test Management", "Growth Hacking", "Software Development", "Data 
 loadDynamicBannerText(names);
 
 const bookButton = document.getElementById("book-button")
-
-bookButton.addEventListener("click", gotoEvent);
+if (bookButton) {
+  bookButton.addEventListener("click", gotoEvent);
+}

@@ -12,5 +12,8 @@
     <strong><h5> <%= @experience.career %> </h5></strong>
     <h5> <%= @experience.company.name %> </h5>
     <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-    <%= link_to booking_path(@experience), method: :get do %><button type="button" class="btn btn-primary">Agree and continue</button> <% end %>
+
+    <%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
+    <%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
+    <% end %>
 </div>
