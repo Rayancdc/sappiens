@@ -26,8 +26,7 @@
     <% end %>
     </div>
     <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-    <%= link_to "Book now", new_experience_event_booking_path(@experience, @events.first), class: "btn btn-treehouse" %>
+    <button class="btn btn-whatever" id="book-button">Book Now</button>
+    <span style='margin-top: 5px; color: red;' id="text-span"></span>
   </div>
-</div>  
-
-
+</div>
