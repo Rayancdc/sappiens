@@ -19,16 +19,17 @@
 </div>
  -->
 <div class="container">
-	<div class="flex-wrapper-exp">
+	<div class="flex-wrapper-exp vcenter">
+
   	<div class="exp-info">
     	<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
     	<p><%= @experience.description %></p>
     </div>
  
   	<div class="exp-dates">
+
     	<div class="calendar-wrapper">
       	<div id="calendar" data-language="en"></div>
-    	</div>
 	    	<h2><%= @experience.career %></h2>
 	    	<h3><%= @experience.company.name %></h3>
 	    	<p><strong><%= @experience.company.address %></strong></p>
