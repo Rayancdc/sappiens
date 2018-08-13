@@ -20,7 +20,13 @@
   </div>
   </div>
   <div class="exp-dates">
+    <div class="calendar-wrapper">
+      <div id="calendar" data-language="en"></div>
+    <%= javascript_tag do %>
+      <%= render(:partial => 'calendar', :handlers => [:erb], :formats => [:js], events: @events) %>
+    <% end %>
+    </div>
     <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-    <%= link_to "Book now", new_experience_event_booking_path(@experience, @event), class: "btn btn-whatever" %>
+    <%= link_to "Book now", new_experience_event_booking_path(@experience, @events.first), class: "btn btn-success" %>
   </div>
 </div>  

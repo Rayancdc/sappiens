@@ -63,8 +63,7 @@
 
 .exp-dates {
   flex: 0 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 300px;
   margin: 50px;
   display: flex;
   justify-content: space-around;
@@ -87,4 +86,8 @@
   background: #EC7063;
   text-decoration: none;
   color: white;
+}
+
+.calendar-wrapper {
+  margin: 10px;
 }
