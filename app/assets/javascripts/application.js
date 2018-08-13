@@ -3,42 +3,39 @@
 //= require rails-ujs
 //= require_tree .
 
-const compareDates = (date1, date2) => {
-    return (date1.getFullYear() === date2.getFullYear()) &&
-           (date1.getMonth() === date2.getMonth()) &&
-           (date1.getDate() == date2.getDate());
-}
+var compareDates = function compareDates(date1, date2) {
+  return date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() == date2.getDate();
+};
 
-const compareArray = (events, date) => {
-  let check = false;
-  events.forEach((event) => {
+var compareArray = function compareArray(events, date) {
+  var check = false;
+  events.forEach(function (event) {
     if (compareDates(event, date)) {
       check = true;
     }
-  })
+  });
   return check;
-}
+};
 
-const setCalendar = (events) => {
+var setCalendar = function setCalendar(events) {
   $('#calendar').datepicker({
-    onRenderCell: function(date, cellType) {
+    onRenderCell: function onRenderCell(date, cellType) {
       if (cellType == 'day') {
-        let isEnabled = compareArray(events, date)
+        var isEnabled = compareArray(events, date);
 
         return {
           disabled: !isEnabled
-        }
+        };
       }
     }
   });
-}
+};
 
-const gotoEvent = (event) => {
-  let selectedDate = $('#calendar').data('datepicker').selectedDates[0];
+var gotoEvent = function gotoEvent(event) {
+  var selectedDate = $('#calendar').data('datepicker').selectedDates[0];
   if (selectedDate) {
-    window.location.href = window.location.href + `/events/${eventHash[selectedDate]}/bookings/new`
+    window.location.href = window.location.href + ('/events/' + eventHash[selectedDate] + '/bookings/new');
+  } else {
+    document.getElementById('text-span').innerHTML = 'Please select a valid date.';
   }
-  else {
-    document.getElementById('text-span').innerHTML = 'Please select a valid date.'
-  }
-}
+};
