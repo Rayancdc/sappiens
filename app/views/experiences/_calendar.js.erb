@@ -1,1 +1,7 @@
-window.onload = setCalendar();
+let events = [];
+
+<% @events.each do |event| %>
+  events.push(new Date(<%= event.date.in_time_zone.to_f * 1000 %>))
+<% end %>
+
+window.onload = setCalendar(events);
