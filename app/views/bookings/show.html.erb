@@ -10,8 +10,7 @@
 </div>
 
 
-<div class="container">
-		<div class="booking-title">
+<div class="container vcenter">
 			<h3> Payment Details </h3>
 					<div class="booking-details">
 						<h2><%= @booking.event.experience.career %></h2>
@@ -20,8 +19,8 @@
 						<p><strong>Your date is scheduled: <%=@booking.event.date %><strong></p>
 								<%= link_to my_bookings_users_path, method: :get do %><button type="button" class="btn btn-treehouse">Go to My Bookings</button> 
 								<% end %>
+					   </div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
