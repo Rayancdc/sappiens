@@ -16,6 +16,20 @@
   margin-left: 100px;
 }
 
+.btn-treehouse {
+
+  color: white;
+  padding: 8px 40px;
+  border-radius: 10px;
+  background: #ff5f2e;
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 2;
+  background: #EC7063;
+  text-decoration: none;
+  color: white;
+}
 
 .flex-wrapper-exp {
   display: flex;
@@ -61,5 +75,16 @@
 
 .btn-whatever {
   background-color: #ff5f2e;
+  color: white;
+  padding: 5px 40px;
+  border-radius: 10px;
 
+
+}
+
+.btn-whatever:hover {
+  opacity: 2;
+  background: #EC7063;
+  text-decoration: none;
+  color: white;
 }
