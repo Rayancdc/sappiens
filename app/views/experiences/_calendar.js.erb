@@ -1,1 +1,12 @@
-window.onload = setCalendar();
+const experienceId = <%= @experience.id %>
+let events = [];
+let eventHash = {};
+let jsdate = 0;
+
+<% @events.each do |event| %>
+  jsdate = new Date(<%= event.date.in_time_zone.to_f * 1000 %>)
+  events.push(jsdate)
+  eventHash[jsdate] = <%= event.id %>
+<% end %>
+
+window.onload = setCalendar(events);

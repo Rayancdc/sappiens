@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
 
   def new
     @experience = Experience.find(params[:experience_id])
+    @event = Event.find(params[:event_id])
     @booking = Booking.new
   end
 
@@ -19,13 +20,13 @@ class BookingsController < ApplicationController
   	@booking.event = Event.find(params[:event_id])
   	if @booking.save
       BookingMailer.creation_confirmation_company(@booking).deliver_now
-      BookingMailer.creation_confirmation(@booking).deliver_now
+      BookingMailer.creation_confirmation_user(@booking).deliver_now
   		redirect_to booking_path(@booking)
   	else
   		render :new
   	end
 	end
-    
+
 
 	private
 
