@@ -35,8 +35,8 @@ const setCalendar = (events) => {
 }
 
 const gotoEvent = (event) => {
-  $('#calendar').data('datepicker').selectedDates
+  let selectedDate = $('#calendar').data('datepicker').selectedDates[0];
+  if (selectedDate) {
+    window.location.href = window.location.href + `/events/${eventHash[selectedDate]}/bookings/new`
+  }
 }
-
-
-$("#book-button").addEventListener("click", gotoEvent)

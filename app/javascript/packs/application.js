@@ -25,3 +25,7 @@ let names = ["Test Management", "Growth Hacking", "Software Development", "Data 
 loadDynamicBannerText(names);
 console.log("rizaparmesão");
 
+
+const bookButton = document.getElementById("book-button")
+
+bookButton.addEventListener("click", gotoEvent);

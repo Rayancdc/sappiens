@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :events, only: [] do
       resources :bookings, shallow: true, except: :index
     end
-    
+
     collection do
       get :guidelines
     end
