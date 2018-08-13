@@ -17,67 +17,50 @@
   margin-left: 100px;
 }
 
-.btn-treehouse {
-
-  color: white;
-  padding: 5px 40px;
-  border-radius: 10px;
-  background: #ff5f2e;
-  transition: background 0.3s ease;
-}
-.btn-treehouse:hover {
-  opacity: 2;
-  background: #EC7063;
-  text-decoration: none;
-  color: white;
-}
-
 .flex-wrapper-exp {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  min-height: 100px;
-
+  align-items: top;
+  min-height: 400px;
 }
 
 .exp-info {
   flex: 1 1 auto;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   text-align: left;
   align-items: left;
   flex-direction: column;
-  height: 50%;
   background-color: white;
   font-size: 15px;
   color: #ff5f2e;
+
+  p {
+    font-size: 15px;
+    color: black;
+  }
 }
 
-.exp-info p {
-
-  font-size: 15px;
-  color: black;
-}
 
 .exp-dates {
   flex: 0 0 auto;
-  width: 100px;
-  height: 100px;
-  margin: 50px;
+  width: 400px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: white;
 }
 
-.btn-whatever {
-  background-color: #ff5f2e;
-  color: white;
-  padding: 5px 40px;
 
+.calendar-wrapper {
+text-align: center;
+padding: 30px;
+
+  h3{
+    margin: 10px;
+  }
 
 }
+

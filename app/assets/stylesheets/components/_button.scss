@@ -14,3 +14,22 @@
     text-decoration: none;
   }
 }
+
+.btn-whatever {
+  background-color: $light-orange;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 05px 55px;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  &:hover {
+    opacity: 2;
+    background: #EC7063;
+    padding: 05px 55px;
+    text-decoration: none;
+    color: white;
+  }
+}
