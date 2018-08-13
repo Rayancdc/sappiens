@@ -12,18 +12,24 @@
 <p></p>
 <div class="wrapper">
  <div class="container">
+  <div class="exp-info">
+    <h2><%= @experience.career %></h2>
+    <h3><%= @experience.company.name %></h3>
+  </div>
+  <p></p>
   <h2> Your experience is on its way.</h2>
-  <h4> Please, check the experience of your choice and confirm your purchase.</h4>
+  <h6> Please, check the experience of your choice and confirm your purchase.</h6>
+  <p></p>
+  <p></p>
   <h5> Chosen experience: <%= @experience.career %> </h5>
   <h5> Company: <%= @experience.company.name %> </h5>
   <h5> Details: <%= @experience.description %> </h5>
-  <h5> We need to change this <%= @experience.events.first.date %> </h5>
-  <h5> Adress: <%= @experience.company.address %> </h5>
+  <h5> Date: We need to change this <%= @experience.events.first.date %> </h5>
+  <h5> Address: <%= @experience.company.address %> </h5>
   <div class="payment-card">
-  <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-    <%= link_to booking_path(@experience), method: :get do %><button type="button" class="btn btn-primary">Pay</button> <% end %>
+    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
+    <%= link_to booking_path(@experience), method: :get do %><button type="button" class= "btn-treehouse">Pay</button> <% end %>
   </div>
- </div>
 </div>
-
+</div>
 
