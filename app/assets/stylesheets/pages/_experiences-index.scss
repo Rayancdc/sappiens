@@ -10,12 +10,14 @@
 }
 
 .experience-card {
-  background-color: $light-gray;
+  background-color: #232955;
   height: 240px;
   margin: 10px;
   padding: 16px;
   box-shadow: 1px 1px 1px 1px rgba(190, 190, 190, 0.7);
   display: flex;
+
+
 }
 
 .card-image {
@@ -27,13 +29,22 @@
   flex: 0 0 auto;
   width: 200px;
   box-shadow: 1px 1px 1px 1px rgba(190, 190, 190, 0.7);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .card-info {
   flex: 1 1 auto;
   min-width: 200px;
   padding: 16px;
+  color: #ff5f2e;
+  background-color: #232955;
+  font-size: 22px;
+}
+
+.btn-whatever {
+
+  color: #232955;
+  background-color: #ff5f2e;
 }
 
 .card-price {
@@ -45,11 +56,13 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: #232955;
+  color: #ff5f2e;
 }
 
 .map-wrapper {
   flex: 0 0 auto;
-  width: 600px;
+  width: 400px;
   margin: 20px;
   position: sticky;
   box-shadow: 1px 1px 1px 1px rgba(190, 190, 190, 0.7);
