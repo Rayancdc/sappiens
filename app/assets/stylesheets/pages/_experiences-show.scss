@@ -7,6 +7,7 @@
   background-position: center;
   background-size: cover;
   color: $orange;
+  
   h1 {
     font-size: 3em;
   }
@@ -19,7 +20,7 @@
 .btn-treehouse {
 
   color: white;
-  padding: 8px 40px;
+  padding: 5px 40px;
   border-radius: 10px;
   background: #ff5f2e;
   transition: background 0.3s ease;
@@ -63,7 +64,8 @@
 
 .exp-dates {
   flex: 0 0 auto;
-  width: 300px;
+  width: 100px;
+  height: 100px;
   margin: 50px;
   display: flex;
   justify-content: space-around;
@@ -76,18 +78,6 @@
   background-color: #ff5f2e;
   color: white;
   padding: 5px 40px;
-  border-radius: 10px;
 
 
-}
-
-.btn-whatever:hover {
-  opacity: 2;
-  background: #EC7063;
-  text-decoration: none;
-  color: white;
-}
-
-.calendar-wrapper {
-  margin: 10px;
 }
