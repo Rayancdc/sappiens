@@ -20,7 +20,6 @@ const compareArray = (events, date) => {
 }
 
 const setCalendar = (events) => {
-  console.log(events)
   $('#calendar').datepicker({
     onRenderCell: function(date, cellType) {
       if (cellType == 'day') {
@@ -38,5 +37,8 @@ const gotoEvent = (event) => {
   let selectedDate = $('#calendar').data('datepicker').selectedDates[0];
   if (selectedDate) {
     window.location.href = window.location.href + `/events/${eventHash[selectedDate]}/bookings/new`
+  }
+  else {
+    document.getElementById('text-span').innerHTML = 'Please select a valid date.'
   }
 }
