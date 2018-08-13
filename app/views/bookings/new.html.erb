@@ -1,23 +1,14 @@
-<!-- <div class="container">
-		<div class="booking-title">
-		<h2> 1- Analyze experiences info 2- Confirm and pay </h2>
-	</div>
-	<div class="book-info" ></div>
-		<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
-		<h5> <%= @experience.description %> </h5>
-		<h5> We need to change this <%= @experience.events.first.date %> </h5>
-		<h5> <%= @experience.company.address %> </h5>
-	</div>
-		<div class="exp-dates">
-    <strong><h5> <%= @experience.career %> </h5></strong>
-    <h5> <%= @experience.company.name %> </h5>
-    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-
-    <%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
-    <%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
-    <% end %>
+<div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
+  <% if @experience.image %>
+    <%= @experience.image.url %>
+  <% else %>
+    <%= image_path('bannersun.jpg') %>
+  <% end %>);">
+  <div class="exp-banner-content">
+    <h1> <%= @experience.career %> </h1>
+  </div>
 </div>
- -->
+
 <div class="container">
 	<div class="flex-wrapper-exp vcenter">
 
@@ -27,16 +18,20 @@
     </div>
  
   	<div class="exp-dates">
-
-    	<div class="calendar-wrapper">
-      	<div id="calendar" data-language="en"></div>
-	    	<h2><%= @experience.career %></h2>
-	    	<h3><%= @experience.company.name %></h3>
-	    	<p><strong><%= @experience.company.address %></strong></p>
-	    	<h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-	    	<button class="btn btn-whatever" id="book-button">Agree and Continue</button>
-	    	<span style='margin-top: 5px; color: red;' id="text-span"></span>
-  	</div>
-
+			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shangai');">
+    		<div class="calendar-wrapper">
+      		<div id="calendar" data-language="en"></div>
+	    		<h5><strong><%= @experience.career %><strong></h5>
+	    		<h5><%= @experience.company.name %></h5>
+	    		<h6><strong><%= @experience.company.address %></strong></h6>
+	    		<h6><strong><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></h6>
+	    		<%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
+      		<%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
+    			<% end %>
+    			
+	    		<span style='margin-top: 5px; color: red;' id="text-span"></span>
+	    	</div>	
+  		</div>
+		</div>
   </div>
 </div>
