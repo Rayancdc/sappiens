@@ -23,8 +23,6 @@ setStickyFooter();
 let names = ["Test Management", "Growth Hacking", "Software Development", "Data Mining", "Data Science"];
 
 loadDynamicBannerText(names);
-console.log("rizaparmesão");
-
 
 const bookButton = document.getElementById("book-button")
 
