@@ -1,19 +1,35 @@
-<div class="container">
-		<div class="booking-title">
-		<h2> 1- Analyze experiences info 2- Confirm and pay </h2>
-	</div>
-	<div class="book-info" ></div>
-		<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
-		<h5> <%= @experience.description %> </h5>
-		<h5> We need to change this <%= @experience.events.first.date %> </h5>
-		<h5> <%= @experience.company.address %> </h5>
-	</div>
-		<div class="exp-dates">
-    <strong><h5> <%= @experience.career %> </h5></strong>
-    <h5> <%= @experience.company.name %> </h5>
-    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
+<div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
+  <% if @experience.image %>
+    <%= @experience.image.url %>
+  <% else %>
+    <%= image_path('bannersun.jpg') %>
+  <% end %>);">
+  <div class="exp-banner-content">
+    <h1> <%= @experience.career %> </h1>
+  </div>
+</div>
 
+<p></p>
+<div class="wrapper">
+  <div class="container">
+    <div class="exp-info">
+      <h2><%= @experience.career %></h2>
+      <h3><%= @experience.company.name %></h3>
+    </div>
+  <p></p>
+  <h2> Your experience is on its way.</h2>
+  <h6> Please, check the experience of your choice and confirm your purchase.</h6>
+  <p></p>
+  <p></p>
+  <h5> Chosen experience: <%= @experience.career %> </h5>
+  <h5> Company: <%= @experience.company.name %> </h5>
+  <h5> Details: <%= @experience.description %> </h5>
+  <h5> Date: <%= @event.date %> </h5>
+  <h5> Address: <%= @experience.company.address %> </h5>
+  <div class="payment-card">
+    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
     <%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
-    <%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
+      <%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
     <% end %>
+  </div>
 </div>

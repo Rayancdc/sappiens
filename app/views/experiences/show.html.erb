@@ -8,17 +8,18 @@
     <h1> <%= @experience.career %> </h1>
   </div>
 </div>
+<p></p>
 
 <div class="container">
   <div class="flex-wrapper-exp">
 
-    <div class="exp-info">      
+    <div class="exp-info">
       <h2><%= @experience.career %></h2>
       <h3><%= @experience.company.name %></h3>
       <p><strong><%= @experience.company.address %></strong></p>
       <p><%= @experience.description %></p>
     </div>
-    
+
     <div class="exp-dates">
 
       <div class="calendar-wrapper">
@@ -28,7 +29,7 @@
         <%= render(:partial => 'calendar', :handlers => [:erb], :formats => [:js], events: @events) %>
         <% end %>
         <% end %>
-        
+
         <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
         <button class="btn btn-whatever" id="book-button" >Book Now</button>
         <span style='margin-top: 10px; color: red;' id="text-span"></span>
