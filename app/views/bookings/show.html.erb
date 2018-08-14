@@ -1,16 +1,16 @@
 <div class="container">
-	<div class="booking-title">
-		<h3> Payment details </h3>
-	</div>
+  <div class="booking-title">
+    <h3> Payment details </h3>
+  </div>
 
-	<div class="box-show">
-		<div class="booking-details">
-			<h2><%= @booking.event.experience.career %></h2>
-			<h4><em><strong>An experience by <%= @booking.event.experience.company.name %><strong></em></h4>
-			<p><strong>Your price paid: <%= number_to_currency(@booking.event.experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></p>
-			<p><strong>Your date is scheduled: <%=@booking.event.date %><strong></p>
-			<%= link_to my_bookings_users_path, method: :get do %><button type="button" class="btn btn-treehouse">Go to My Bookings</button> <% end %>
-		</div>
-	</div>
-	</div>
+  <div class="box-show">
+    <div class="booking-details">
+      <h2><%= @booking.event.experience.career %></h2>
+      <h4><em><strong>An experience by <%= @booking.event.experience.company.name %><strong></em></h4>
+      <p><strong>Your price paid: <%= number_to_currency(@booking.event.experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></p>
+      <p><strong>Your date is scheduled: <%=@booking.event.date %><strong></p>
+      <%= link_to my_bookings_users_path, method: :get do %><button type="button" class="btn btn-treehouse">Go to My Bookings</button> <% end %>
+    </div>
+  </div>
+  </div>
 </div>
