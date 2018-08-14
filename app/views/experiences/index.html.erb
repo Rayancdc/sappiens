@@ -1,15 +1,18 @@
 <div class="index-box">
-
   <div class="exp-container">
     <div class="row">
       <% if @experiences.count > 0 %>
+        <div class="search-result">
+          <h2> We have found <%= @experiences.count %> experiences for you: </h2>
+        </div>
         <% @experiences.each do |experience| %>
           <div class="col-md-12">
             <div class="experience-card">
               <div class="card-image"></div>
               <div class="card-info">
                 <h2> <%= experience.career %></h2>
-                <p> <%= experience.company.name %> </p>
+                <p style="font-size: 1em;"> <strong><%= experience.company.name %></strong> </p>
+                <p> <strong> Description:</strong> <%= experience.description %> </p>
               </div>
               <div class="card-price">
                 <strong><%= number_to_currency(experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
