@@ -25,9 +25,13 @@
 	    		<h5><%= @experience.company.name %></h5>
 	    		<h6><strong><%= @experience.company.address %></strong></h6>
 	    		<h6><strong><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></h6>
-	    		<%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
-      		<%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
-    			<% end %>
+	    		<button class="btn btn-whatever" id="pay-button">Agree and Continue</button>
+
+          <% content_for(:after_js) do %>
+            <%= javascript_tag do %>
+              <%= render(:partial => 'payment', :handlers => [:erb], :formats => [:js]) %>
+            <% end %>
+          <% end %>
     			
 	    		<span style='margin-top: 5px; color: red;' id="text-span"></span>
 	    	</div>	
