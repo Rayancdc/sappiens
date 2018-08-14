@@ -2,7 +2,11 @@
   <!-- Logo -->
   <div class="nav-item">
     <a href="/" class="navbar-wagon-brand">
-    <%= image_tag 'logo-white.png', class: "logo" %>
+    <% if params[:action] == "landing"  %>
+      <%= image_tag 'sapiens_logo_branco.png', class: "logo" %>
+    <%  else %>
+      <%=  image_tag 'sapiens_logo_branco.png', class: "logo" %>
+    <% end %>
     </a>
   </div>
 
@@ -17,19 +21,14 @@
         <span class="navbar-wagon-item navbar-wagon-link dropdown">
           <a href="" class="dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Minha Conta</a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
+            <li class="drop-item">
               <%= link_to dashboard_users_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to edit_profile_users_path do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
+            <li class="drop-item">
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i> <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
