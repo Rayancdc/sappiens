@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
   def new
     @experience = Experience.find(params[:experience_id])
     @event = Event.find(params[:event_id])
@@ -26,7 +25,6 @@ class BookingsController < ApplicationController
   		render :new
   	end
 	end
-
 
 	private
 
