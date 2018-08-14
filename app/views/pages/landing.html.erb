@@ -2,18 +2,16 @@
   <div class="banner-content text-left">
     <h2> Experience <span id="banner-typed-text"></span> </h2>
     <h3> Match your tech career, experiencing it.</h3>
-    <div class="search-wrapper text-center">
+    <div class="search-wrapper">
       <%= form_tag experiences_path, method: :get, class: 'form-inline' do %>
         <div class="form-group">
           <%= search_field_tag :query, params[:query],
-          placeholder: 'Try Product Manager',
-          size: 60,
+          placeholder: 'Try Data Analist or just press Enter',
+          size: 70,
           class: 'form-control searchTerm' %>
-          <div class="search-btn">
-            <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
         </div>
       <% end %>
     </div>
