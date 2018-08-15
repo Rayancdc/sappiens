@@ -25,6 +25,7 @@ gem 'geocoder'
 gem 'pg_search'
 gem 'faker'
 gem 'jquery-ui-rails'
+gem 'omniauth-facebook'
 gem 'rack-ssl-enforcer', group: :production
 
 group :development, :test do
