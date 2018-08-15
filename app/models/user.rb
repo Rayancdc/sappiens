@@ -38,6 +38,4 @@ private
     UserMailer.welcome(self).deliver_later
   end
 
-
 end
-provider: auth.provider, uid: auth.uid
