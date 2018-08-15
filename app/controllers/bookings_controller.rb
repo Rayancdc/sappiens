@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
   def new
     @experience = Experience.find(params[:experience_id])
     @event = Event.find(params[:event_id])
@@ -21,12 +20,20 @@ class BookingsController < ApplicationController
   	if @booking.save
       BookingMailer.creation_confirmation_company(@booking).deliver_now
       BookingMailer.creation_confirmation_user(@booking).deliver_now
-  		redirect_to booking_path(@booking)
+
+      respond_to do |format|
+  		  format.html { redirect_to booking_path(@booking) }
+        format.json { render json: { booking_id: @booking.id }, status: 200 }
+      end
+
   	else
-  		render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: { errors: @booking.errors.full_messages }, status: 422 }
+      end
+
   	end
 	end
-
 
 	private
 

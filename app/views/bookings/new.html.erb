@@ -9,27 +9,33 @@
   </div>
 </div>
 
-<p></p>
-<div class="wrapper">
-  <div class="container">
-    <div class="exp-info">
-      <h2><%= @experience.career %></h2>
-      <h3><%= @experience.company.name %></h3>
+<div class="container">
+	<div class="flex-wrapper-exp vcenter">
+
+  	<div class="exp-info">
+    	<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
+    	<p><%= @experience.description %></p>
     </div>
-  <p></p>
-  <h2> Your experience is on its way.</h2>
-  <h6> Please, check the experience of your choice and confirm your purchase.</h6>
-  <p></p>
-  <p></p>
-  <h5> Chosen experience: <%= @experience.career %> </h5>
-  <h5> Company: <%= @experience.company.name %> </h5>
-  <h5> Details: <%= @experience.description %> </h5>
-  <h5> Date: <%= @event.date %> </h5>
-  <h5> Address: <%= @experience.company.address %> </h5>
-  <div class="payment-card">
-    <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
-    <%= simple_form_for @booking, url: experience_event_bookings_path do |f| %>
-      <%= f.button :submit, "Agree and Continue", class: "btn btn-whatever" %>
-    <% end %>
+ 
+  	<div class="exp-dates">
+			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/wagon/image/upload/v1526053365/hpfe4f4msysebldbokgy.jpg');">
+    		<div class="calendar-wrapper">
+      		<div id="calendar" data-language="en"></div>
+	    		<h5><strong><%= @experience.career %><strong></h5>
+	    		<h5><%= @experience.company.name %></h5>
+	    		<h6><strong><%= @experience.company.address %></strong></h6>
+	    		<h6><strong><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></h6>
+	    		<button class="btn btn-whatever" id="pay-button">Agree and Continue</button>
+
+          <% content_for(:after_js) do %>
+            <%= javascript_tag do %>
+              <%= render(:partial => 'payment', :handlers => [:erb], :formats => [:js]) %>
+            <% end %>
+          <% end %>
+    			
+	    		<span style='margin-top: 5px; color: red;' id="text-span"></span>
+	    	</div>	
+  		</div>
+		</div>
   </div>
 </div>

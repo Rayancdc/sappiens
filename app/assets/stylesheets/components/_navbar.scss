@@ -1,6 +1,6 @@
 /* Main navbar */
 .logo {
-  height: 60px;
+  height: 64px;
   margin-right: 50px;
   margin-left: 10px;
   border-radius: 2px;
@@ -19,7 +19,7 @@
   color: white;
   a {
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     &:hover {
       color: #da552f;
       text-decoration: none;
@@ -81,9 +81,13 @@
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
-  font-size: 15px !important;
+  font-size: 20px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+}
+.drop-item {
+  margin-bottom: 10px;
+  text-align: left;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
