@@ -1,22 +1,56 @@
 .booking-title {
 
 color: black;
-font-size: 10px;
+font-size: 20px;
+padding: 10px;
 
 }
 
-.booking-details h2 {
+
+ h2 {
 
 color: #ff5f2e;
 
-
 }
+
+.exp-banner {
+  display: flex;
+  height: 30vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: flex-start;
+  background-position: center;
+  background-size: cover;
+  color: $orange;
+  
+  h1 {
+    font-size: 3em;
+  }
+}
+
+.exp-banner-content {
+  margin-left: 100px;
+}
+
+
+
 
 .btn-treehouse {
 
   color: white;
-  padding: 5px 40px;
+  padding: 5px 55px;
   border-radius: 10px;
   background: #ff5f2e;
   transition: background 0.3s ease;
+
+&:hover {
+    opacity: 2;
+    background: #EC7063;
+    padding: 05px 55px;
+    text-decoration: none;
+    color: white;
+
 }
+
+}
+

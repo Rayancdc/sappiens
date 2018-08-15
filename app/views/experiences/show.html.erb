@@ -1,8 +1,8 @@
 <div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
   <% if @experience.image %>
-    <%= @experience.image.url %>
+  <%= @experience.image.url %>
   <% else %>
-    <%= image_path('bannersun.jpg') %>
+  <%= image_path('bannersun.jpg') %>
   <% end %>);">
   <div class="exp-banner-content">
     <h1> <%= @experience.career %> </h1>
@@ -25,9 +25,9 @@
       <div class="calendar-wrapper">
         <div id="calendar" data-language="en"></div>
         <% content_for(:after_js) do %>
-          <%= javascript_tag do %>
-            <%= render(:partial => 'calendar', :handlers => [:erb], :formats => [:js], events: @events) %>
-          <% end %>
+        <%= javascript_tag do %>
+        <%= render(:partial => 'calendar', :handlers => [:erb], :formats => [:js], events: @events) %>
+        <% end %>
         <% end %>
 
         <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>

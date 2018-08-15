@@ -1,22 +1,20 @@
-<h1 class="text-center">My Bookings</h1>
-<h3 class="text-center"><%= link_to "Book a new experience", root_path %></h3>
-<div class="content">
-	<div class="cards-container">
-		<div class="row">
+<div class="container"><h1 class="text-center mobile-bookings">My Bookings</h1>
+<h3 class="text-center"><%= link_to "Choose your next experience", root_path %></h3>
+</div>
+	<div class="container">
+    <div class="row">
       <% @bookings.each do |booking| %>
-  			<div class="col-xs-12 col-sm-4">
-  				<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-  					<div class="card-category">Completed</div>
-  					<div class="card-description">
-  						<h2><%= booking.event.experience.career %></h2>
-  						<p><%= booking.event.experience.description %></p>
-  					</div>
-  					<div Class= "ratings">Rating: 4</div>
-  					<%= image_tag 'scientist.jpg', class: 'avatar-large' %>
-  					<a class="card-link" href="#" ></a>
-  				</div>
-  			</div>
-      <% end %>
-		</div>
-	</div>
+        <div class="col-xs-12 col-sm-7">       
+          <div class="card-my-bookings">
+                <div class="card-description-my-bookings">
+            <h2><%= booking.event.experience.career %></h2>
+            <p><%= booking.event.experience.description %></p>
+          </div>
+          <div class= "ratings-my">Rating 5</div> 
+          <a class="card-link-my-bookings" href="#" ></a>
+          
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
