@@ -11,7 +11,7 @@
    <div class= "flex-guide">
     <div class="card-guidelines">
       <h5> 1- Help our students match their tech careers. If you want to make it happen with us, be a Partner Company now! </h5>
-      <%= link_to new_user_company_path(current_user), method: :get do %><button type="button" class="btn btn-primary">Register my Company</button> <% end %>
+      <%= link_to new_company_path, method: :get do %><button type="button" class="btn btn-primary">Register my Company</button> <% end %>
     </div>
     <div class="image-guidelines01">
     </div>
@@ -28,7 +28,7 @@
    <div class= "flex-guide">
     <div class="card-guidelines">
       <h5> 3- Host an experience in your Company and help build the next tech talent generation! </h5>
-      <%= link_to new_experience_path(@company), method: :get do %><button type="button" class="btn btn-primary">Create an Experience</button> <% end %>
+      <%= link_to new_experience_path, method: :get do %><button type="button" class="btn btn-primary">Create an Experience</button> <% end %>
     </div>
     <div class="image-guidelines03">
     </div>
