@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#landing"
 
   resources :users, only: [] do
-    resources :companies, only: [:new, :create]
     collection do
       get :dashboard
       get :edit_profile
@@ -25,5 +24,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :companies, only: [:new, :create]
   resources :bookings, only: :index
 end

@@ -1,19 +1,17 @@
 <div class="banner">
-  <div class="banner-content text-left">
-    <h2> Experience <span id="banner-typed-text"></span> </h2>
-    <h3> Match your tech career, experiencing it.</h3>
-    <div class="search-wrapper">
-      <%= form_tag experiences_path, method: :get, class: 'form-inline' do %>
-        <div class="form-group">
-          <%= search_field_tag :query, params[:query],
-          placeholder: 'Try Data Analist or just press Enter',
-          size: 45,
-          class: 'form-control searchTerm' %>
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      <% end %>
+    <div class="col-10 offset-1 col-md-6 offset-md-3">
+      <div class="banner-content">
+        <h3> Experience  </h3>
+        <h4><span id="banner-typed-text"></span></h4>
+        <p> Match your tech career, experiencing it.</p>
+        <%= form_tag experiences_path, method: :get do %>
+          <div class="search-wrap">
+            <input type="text" placeholder="Try Data Analist" name="query" class="searchBar">
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 </div>

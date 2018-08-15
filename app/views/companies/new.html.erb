@@ -2,7 +2,7 @@
  <div class="container">
   <p></p>
   <h1>Create a new company for <%= current_user.name %></h1>
-  <%= simple_form_for [current_user, @company] do |f| %>
+  <%= simple_form_for @company do |f| %>
   <%= f.input :name %>
   <%= f.input :address, label_method: :field_1 %>
   <%= f.submit %>
