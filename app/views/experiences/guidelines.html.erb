@@ -1,46 +1,122 @@
 <div class="banner-guidelines">
-  <div class="banner-content text-left">
-    <h2> Make it happen with us.</h2>
-    <h3> Be a Partner Company now!</h3>
+  <div class="row">
+    <div class="col-6 offset-3 col-md-12 offset-md-0">
+      <h2> Make it happen with us.</h2>
+      <h3> Be a Partner Company now!</h3>
+    </div>
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="container">
-
-   <div class= "flex-guide">
-    <div class="card-guidelines">
-      <h5> 1- Help our students match their tech careers. If you want to make it happen with us, be a Partner Company now! </h5>
-      <%= link_to new_user_company_path(current_user), method: :get do %><button type="button" class="btn btn-primary">Register my Company</button> <% end %>
+<!-- Navigation for desktop -->
+<div class ="container d-none d-md-block">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 1- Help our students match their tech careers. If you want to make it happen with us, be a Partner Company now! </h5>
+        <%= link_to new_company_path, method: :get do %><button type="button" class="btn btn-primary">Register my Company</button> <% end %>
+      </div>
     </div>
-    <div class="image-guidelines01">
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines01">
+      </div>
     </div>
-   </div>
-
-   <div class= "flex-guide">
-    <div class="image-guidelines02">
-    </div>
-    <div class="card-guidelines">
-      <h5> 2- Contact us and we'll be glad to help you create your experience! </h5>
-    </div>
-   </div>
-
-   <div class= "flex-guide">
-    <div class="card-guidelines">
-      <h5> 3- Host an experience in your Company and help build the next tech talent generation! </h5>
-      <%= link_to new_experience_path(@company), method: :get do %><button type="button" class="btn btn-primary">Create an Experience</button> <% end %>
-    </div>
-    <div class="image-guidelines03">
-    </div>
-   </div>
-
-   <div class= "flex-guide">
-    <div class="image-guidelines04">
-    </div>
-    <div class="card-guidelines">
-      <h5> 4- Well done! You're alredy helping our students to find their way on the career track! </h5>
-    </div>
-   </div>
-
   </div>
-<div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines02">
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 2- Contact us and we'll be glad to help you create your experience! </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 3- Host an experience in your Company and help build the next tech talent generation! </h5>
+        <%= link_to new_experience_path, method: :get do %><button type="button" class="btn btn-primary">Create an Experience</button> <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines03">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines04">
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 4- Well done! You're alredy helping our students to find their way on the career track! </h5>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class ="container d-block d-md-none">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 1- Help our students match their tech careers. If you want to make it happen with us, be a Partner Company now! </h5>
+        <%= link_to new_company_path, method: :get do %><button type="button" class="btn btn-primary">Register my Company</button> <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines01">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 2- Contact us and we'll be glad to help you create your experience! </h5>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines02">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 3- Host an experience in your Company and help build the next tech talent generation! </h5>
+        <%= link_to new_experience_path, method: :get do %><button type="button" class="btn btn-primary">Create an Experience</button> <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines03">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card-guidelines">
+        <h5> 4- Well done! You're alredy helping our students to find their way on the career track! </h5>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="image-guidelines04">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

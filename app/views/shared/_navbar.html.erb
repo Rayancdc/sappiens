@@ -19,7 +19,7 @@
 
       <!-- Avatar with dropdown menu -->
         <span class="navbar-wagon-item navbar-wagon-link dropdown">
-          <a href="" class="dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">Minha Conta</a>
+          <a href="" class="dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">My account</a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li class="drop-item">
               <%= link_to dashboard_users_path do %>
@@ -45,9 +45,31 @@
   <div class="dropdown navbar-wagon-item d-md-none">
     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
     <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <li><%= link_to "Homepage", root_path%></li>
-      <li><%= link_to "Minha Conta", dashboard_users_path%></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <li>
+        <%= link_to guidelines_experiences_path do %>
+          <i class="fas fa-chart-pie"></i> <%= t(".company", default: "I'm a Company") %>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to dashboard_users_path do %>
+          <i class="fa fa-user"></i> <%= t(".profile", default: "My Account") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-sign-out-alt"></i>
+          <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+      <% else %>
+      <!-- Login link (when logged out) -->
+      <li>
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-user"></i> <%= t(".profile", default: "Login") %>
+        <% end %>
+      </li>
+    <% end %>
     </ul>
   </div>
 </div>
