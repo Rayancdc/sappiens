@@ -11,6 +11,15 @@
   justify-content: center;
 }
 
+.col-md-6 {
+  padding: 0 !important;
+}
+
+.a {
+  background-color: red;
+  height: 300px;
+}
+
 .flex-guide {
   display: flex;
   justify-content: flex-start;
@@ -19,7 +28,6 @@
 }
 
 .card-guidelines {
-  flex: 1 1 auto;
   display: flex;
   align-content: center;
   justify-content: space-around;
@@ -31,9 +39,7 @@
   }
 
 .image-guidelines01 {
-  flex: 0 0 auto;
   background-image: image-url('image-guidelines01.png');
-  width: 50%;
   height: 300px;
   display: flex;
   align-items: center;
@@ -43,9 +49,7 @@
 }
 
 .image-guidelines02 {
-  flex: 0 0 auto;
   background-image: image-url('image-guidelines02.jpg');
-  width: 50%;
   height: 300px;
   display: flex;
   align-items: center;
@@ -54,9 +58,7 @@
   background-size: cover;
 }
 .image-guidelines03 {
-  flex: 0 0 auto;
   background-image: image-url('image-guidelines03.jpg');
-  width: 50%;
   height: 300px;
   display: flex;
   align-items: center;
@@ -65,9 +67,7 @@
   background-size: cover;
 }
 .image-guidelines04 {
-  flex: 0 0 auto;
   background-image: image-url('banner-guidelines.jpg');
-  width: 50%;
   height: 300px;
   display: flex;
   align-items: center;
@@ -75,9 +75,6 @@
   background-position: center center;
   background-size: cover;
 }
-
-
-
 
 .banner-content {
   h2 {
