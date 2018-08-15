@@ -24,7 +24,7 @@
           </div>
           <div class="col-5 col-md-4">
             <div class="card-price">
-              <strong><%= number_to_currency(experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
+              <strong><p style="font-size: 0.7em"><%= number_to_currency(experience.price_cents/100.0, { unit: "$", separator: "," }) %>/day </p></strong>
               <%= link_to "More Info", experience_path(experience), class: "btn btn-whatever" %>
             </div>
           </div>
