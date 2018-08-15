@@ -10,15 +10,17 @@
 </div>
 
 <div class="container">
-	<div class="flex-wrapper-exp vcenter">
+  <div class="body-size">
+    <div class="row align-items-center">
 
-  	<div class="exp-info">
-    	<h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
-    	<p><%= @experience.description %></p>
-    </div>
- 
-  	<div class="exp-dates">
-			<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/wagon/image/upload/v1526053365/hpfe4f4msysebldbokgy.jpg');">
+      <div class="col-sm-12 col-md-6">
+        <div class="content-box">
+          <h5> Your experience is on its way. Please, check the experience of your choice and confirm your purchase.</h5>
+          <p><%= @experience.description %></p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+			 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/wagon/image/upload/v1526053365/hpfe4f4msysebldbokgy.jpg');">
     		<div class="calendar-wrapper">
       		<div id="calendar" data-language="en"></div>
 	    		<h5><strong><%= @experience.career %><strong></h5>
@@ -35,7 +37,8 @@
     			
 	    		<span style='margin-top: 5px; color: red;' id="text-span"></span>
 	    	</div>	
-  		</div>
+  		  </div> 
+      </div>
 		</div>
   </div>
 </div>
