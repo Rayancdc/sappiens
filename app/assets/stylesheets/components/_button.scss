@@ -80,3 +80,22 @@
   background-color: #5B7BD5;
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
+
+.btn-sidebar {
+  background-color: $blue;
+  color: white;
+  position: fixed;
+  padding: 8px 16px;
+  margin: 0 auto;
+  border-radius: 0 0 5px 0;
+  z-index: 50000;
+  transition: background 0.3s ease;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.menu-button-wrapper {
+  height: 32px;
+}
