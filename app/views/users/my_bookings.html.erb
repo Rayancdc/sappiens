@@ -4,13 +4,13 @@
   <div class="container">
      <div class="row">
        <% @bookings.each do |booking| %>
-         <div class="col-xs-12 col-sm-6"> 
-           <%= link_to booking_path(booking) do  %>     
+         <div class="col-xs-12 col-sm-6">
+           <%= link_to booking_path(booking) do  %>
              <div class="card-my-bookings">
                <div class="card-description-my-bookings">
                <h2><%= booking.event.experience.career %></h2>
-               <p><%= booking.event.date %></p>
-               <p><%= booking.event.experience.company.address %></p>
+               <p> Date: <%= booking.event.date %></p>
+               <p> Address: <%= booking.event.experience.company.address %></p>
                </div>
                <div class= "ratings-my">
                  <% 4.times do %>
@@ -22,8 +22,8 @@
                  <%# end %>
                </div>
              </div>
-        <% end %> 
+        <% end %>
        </div>
      <% end %>
    </div>
- </div> 
+ </div>
