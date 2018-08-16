@@ -44,7 +44,7 @@
 <!-- Dropdown appearing on mobile only -->
   <div class="dropdown navbar-wagon-item d-md-none">
     <% if user_signed_in? %>
-      <div class="avatar-dropdown" data-toggle="dropdown"><img src="<%= current_user.image %>" class="avatar-small" > <i class="dropdown-arrow dropdown-toggle"></i></div>
+      <span class="avatar-dropdown" data-toggle="dropdown"><img src="<%= current_user.image %>" class="avatar-small" > <i class="dropdown-arrow dropdown-toggle"></i></span>
     <% else %>
     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
     <% end %>
