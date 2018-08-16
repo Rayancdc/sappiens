@@ -13,7 +13,7 @@
 <div class="container">
   <div class="row ">
 
-    <div class="col-sm-12 col-md-6">
+    <div class="col-xs-12 col-md-6">
       <div class="content-box">
         <h2><%= @experience.career %></h2>
         <h3><%= @experience.company.name %></h3>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-6">
+    <div class="col-xs-12 col-md-6">
       <div class="exp-dates">
         <div class="calendar-wrapper">
         <div id="calendar" data-language="en"></div>
@@ -35,6 +35,7 @@
         <h3><%= number_to_currency(@experience.price_cents/100.0, { unit: "R$", separator: "," }) %></h3>
           <button class="btn btn-whatever" id="book-button" >Book Now</button>
           <span style='margin-top: 10px; color: red;' id="text-span"></span>
+        </div>
       </div>
     </div>
   </div>
