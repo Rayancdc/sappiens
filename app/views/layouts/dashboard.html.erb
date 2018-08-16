@@ -15,7 +15,8 @@
     <%= render 'shared/flashes' %>
     <div id="wrapper">
     <%= render 'shared/sidebar' %>
-
+    <a href="#menu-toggle" class="btn btn-sidebar" id="menu-toggle"><i class="fas fa-bars"></i></a>
+    <div class="menu-button-wrapper"></div>
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -30,12 +31,6 @@
     </div>
     <!-- /#wrapper -->
      <!-- Menu Toggle Script -->
-<!--     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script> -->
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag "application" %>

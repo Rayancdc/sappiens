@@ -5,11 +5,10 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :omniauthable, :omniauth_providers => [:facebook]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  validates :name, presence: true
+  devise :omniauthable, omniauth_providers: [:facebook]
+  mount_uploader :image, PhotoUploader
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -20,12 +19,17 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
+    user = where(email: auth.info.email).first_or_initialize do |user|
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
     end
+    if user.provider.nil? || user.uid.nil?
+      user.provider = auth.provider
+      user.uid = auth.uid
+    end
+    user.save
+    user
   end
 
 
@@ -34,6 +38,5 @@ private
   def send_welcome_email
     UserMailer.welcome(self).deliver_later
   end
-
 
 end

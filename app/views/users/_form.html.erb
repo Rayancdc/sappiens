@@ -1,5 +1,7 @@
 	<%= simple_form_for @user, url: update_profile_users_path do |f| %>
   <%= f.input :name %>
+  <%= f.input :image %>
+  <%= f.input :image_cache, as: :hidden %>
   <%= f.input :cellphone %>
   <%= f.button :submit, class: "btn btn-purple" %>
 <% end %>

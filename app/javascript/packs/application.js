@@ -7,6 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 import 'bootstrap';
+import 'jquery';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 import { setStickyFooter } from '../components/footer';
@@ -20,7 +21,7 @@ initUpdateNavbarOnScroll();
 
 setStickyFooter();
 
-let names = ["Test Management", "Growth Hacking", "Software Development", "Data Mining", "Data Science"];
+let names = ['Product Management', 'Growth Hacking', "Software Development", "Data Mining", "Data Science", 'Digital Marketer', 'Cyber Security Analysts', 'Web Developer', 'Information Technology Manager' ];
 
 loadDynamicBannerText(names);
 
@@ -28,3 +29,8 @@ const bookButton = document.getElementById("book-button")
 if (bookButton) {
   bookButton.addEventListener("click", gotoEvent);
 }
+
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});

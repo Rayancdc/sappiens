@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update_profile
     @user = current_user
-    if @user.update(user_params) 
+    if @user.update(user_params)
       redirect_to dashboard_users_path
     else
       render :edit_profile
@@ -35,6 +35,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :cellphone)
+    params.require(:user).permit(:name, :cellphone, :image)
   end
 end
