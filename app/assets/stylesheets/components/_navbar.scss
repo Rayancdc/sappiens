@@ -1,4 +1,22 @@
 /* Main navbar */
+.avatar-small {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar-dropdown {
+  position: relative;
+  margin: 0;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  bottom: -13px;
+  right: 0;
+}
+
 .logo {
   height: 64px;
   margin-right: 50px;

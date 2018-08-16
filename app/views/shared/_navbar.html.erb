@@ -43,7 +43,11 @@
 
 <!-- Dropdown appearing on mobile only -->
   <div class="dropdown navbar-wagon-item d-md-none">
+    <% if user_signed_in? %>
+      <div class="avatar-dropdown" data-toggle="dropdown"><img src="<%= current_user.image %>" class="avatar-small" > <i class="dropdown-arrow dropdown-toggle"></i></div>
+    <% else %>
     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+    <% end %>
     <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
       <li>
         <%= link_to guidelines_experiences_path do %>
