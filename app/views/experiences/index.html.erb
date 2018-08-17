@@ -13,7 +13,9 @@
       <% @experiences.each do |experience| %>
       <div class="row exp-wrap no-gutters">
           <div class="d-none d-md-block col-3">
-            <div class="card-image"><%= image_tag experience.image, class: 'card-image' %></div>
+            <div class="card-image">
+             <%= image_tag(experience.image.nil? ? "Data Mining.jpg" : experience.image, class: "card-image") %>
+            </div>
           </div>
           <div class="col-7 col-md-5">
             <div class="card-info">
