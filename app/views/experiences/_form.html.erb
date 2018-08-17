@@ -1,7 +1,7 @@
 <%= simple_form_for @experience, url: experiences_path do |f| %>
   <%= f.input :career %>
   <%= f.input :description %>
-  <%= f.input :date, as: :string, input_html: { id: :datepicker, data: { language: "en", multiple_dates: true, multiple_dates_separator: ", ", position: "top left"  } }  %>
+  <%= f.input :date, as: :string, label: "Dates:", placeholder: "Select as many dates as you want", input_html: { id: :datepicker, data: { language: "en", multiple_dates: true, multiple_dates_separator: ", ", position: "top left"  } }  %>
   <%= f.input :price_cents, placeholder: "$49,90", label: "Price:", as: :string %>
   <%= f.button :submit, class: "btn btn-whatever" %>
 <% end %>
