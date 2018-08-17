@@ -2,6 +2,6 @@
   <%= f.input :career %>
   <%= f.input :description %>
   <%= f.input :date, as: :string, input_html: { id: :datepicker, data: { language: "en", multiple_dates: true, multiple_dates_separator: ", ", position: "top left"  } }  %>
-  <%= f.input :price_cents %>
+  <%= f.input :price_cents, label: "Price:", as: :string %>
   <%= f.button :submit, class: "btn btn-whatever" %>
 <% end %>
