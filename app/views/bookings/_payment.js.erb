@@ -17,7 +17,7 @@ button.addEventListener('click', function() {
     success: function(payment_data) {
       $.ajax({
         url: `/experiences/${transaction_data.experience_id}/events/${transaction_data.event_id}/bookings`,
-        data: { token : payment_data.token },
+        data: {"token":`${payment_data.token}`},
         dataType: "json",
         type: "POST",
         success: function(data) {
@@ -25,24 +25,24 @@ button.addEventListener('click', function() {
         },
         error: function(data) {
           console.log(data.errors);
+          console.log("Attempting again");
+          $.ajax({
+            url: `/experiences/${transaction_data.experience_id}/events/${transaction_data.event_id}/bookings`,
+            data: {"token":`${payment_data.token}`},
+            dataType: "json",
+            type: "POST",
+            success: function(data) {
+              window.location.href = `/bookings/${data.booking_id}`
+            },
+            error: function(data) {
+              console.log(data.errors)
+            }
+          });
         }
       });
     },
     error: function(err) {
       console.log(err);
-      console.log("Attempting again");
-      $.ajax({
-        url: `/experiences/${transaction_data.experience_id}/events/${transaction_data.event_id}/bookings`,
-        data: { token : payment_data.token },
-        dataType: "json",
-        type: "POST",
-        success: function(data) {
-          window.location.href = `/bookings/${data.booking_id}`
-        },
-        error: function(data) {
-          console.log(data.errors)
-        }
-      });
     }
 });
 
