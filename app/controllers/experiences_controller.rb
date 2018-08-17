@@ -31,6 +31,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+
     @company = current_user.company
     @experience = @company.experiences.build(experience_params)
     event_dates = params[:experience][:date].split(', ')
@@ -70,6 +71,11 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
+    convert_price
     params.require(:experience).permit(:career, :price_cents, :description)
+  end
+
+  def convert_price
+    params[:experience][:price_cents] = (params[:experience][:price_cents].gsub(",",".").gsub(/[^\d.,]/,"").to_f*100).ceil
   end
 end
