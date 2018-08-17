@@ -19,7 +19,7 @@
 
       <!-- Avatar with dropdown menu -->
         <span class="navbar-wagon-item navbar-wagon-link dropdown">
-          <span class="avatar-dropdown" id="navbar-wagon-menu" data-toggle="dropdown"><a href="">My Account</a><%= image_tag(current_user.image.url.nil? ? "profile.jpg" : current_user.image.url, class: "avatar-small") %> <i class="dropdown-arrow dropdown-toggle"></i></span>
+          <span class="avatar-dropdown" id="navbar-wagon-menu" data-toggle="dropdown"><a href=""><%= current_user.name %></a><%= image_tag(current_user.image.url.nil? ? "profile.jpg" : current_user.image.url, class: "avatar-small") %> <i class="dropdown-arrow dropdown-toggle"></i></span>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li class="drop-item">
               <%= link_to dashboard_users_path do %>
