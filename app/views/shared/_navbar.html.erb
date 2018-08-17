@@ -19,7 +19,7 @@
 
       <!-- Avatar with dropdown menu -->
         <span class="navbar-wagon-item navbar-wagon-link dropdown">
-          <span class="avatar-dropdown" id="navbar-wagon-menu" data-toggle="dropdown"><a href=""><%= current_user.name %></a><img src="<%= current_user.image %>" class="avatar-small" > <i class="dropdown-arrow dropdown-toggle"></i></span>
+          <span class="avatar-dropdown" id="navbar-wagon-menu" data-toggle="dropdown"><a href=""><%= current_user.name %></a><%= image_tag(current_user.image.url.nil? ? "profile.jpg" : current_user.image.url, class: "avatar-small") %> <i class="dropdown-arrow dropdown-toggle"></i></span>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li class="drop-item">
               <%= link_to dashboard_users_path do %>
@@ -44,7 +44,7 @@
 <!-- Dropdown appearing on mobile only -->
   <div class="dropdown navbar-wagon-item d-md-none">
     <% if user_signed_in? %>
-      <div class="avatar-dropdown" data-toggle="dropdown"><img src="<%= current_user.image %>" class="avatar-small" > <i class="dropdown-arrow dropdown-toggle"></i></div>
+      <span class="avatar-dropdown" data-toggle="dropdown"><%= image_tag(current_user.image.url.nil? ? "profile.jpg" : current_user.image.url, class: "avatar-small") %><i class="dropdown-arrow dropdown-toggle"></i></span>
     <% else %>
     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
     <% end %>

@@ -27,6 +27,7 @@ gem 'faker'
 gem 'jquery-ui-rails'
 gem 'omniauth-facebook'
 gem 'rack-ssl-enforcer', group: :production
+gem 'pagarme'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

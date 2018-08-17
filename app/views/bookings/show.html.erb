@@ -1,4 +1,4 @@
-<div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
+  <div class="exp-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%), url(
   <% if @booking.event.experience.image %>
     <%= @booking.event.experience.image.url %>
   <% else %>
@@ -15,9 +15,10 @@
 		<div class="box-show">
 			<div class="booking-details text-center">
 				<h2><%= @booking.event.experience.career %></h2>
-				<h6>An experience by <strong><%= @booking.event.experience.company.name %></h6></strong>
-				<h6>Your price paid is <strong><%= number_to_currency(@booking.event.experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></h6>
-				<h6>Scheduled for <strong><%=@booking.event.date %><strong></h6>
+				<h5>An experience by <strong><%= @booking.event.experience.company.name %></h5></strong>
+				<h5>Your price paid is <strong><%= number_to_currency(@booking.event.experience.price_cents/100.0, { unit: "R$", separator: "," }) %></strong></h5>
+				<h5>Scheduled for <strong><%=@booking.event.date %><strong></h5>
+        <h5>Status: <strong> <span class="<%= @booking.status == "paid" ? "text-success" : "text-warning" %>"> <%= @booking.status.capitalize %></span></strong></h5>
 						<%= link_to my_bookings_users_path, method: :get do %><button type="button" class="btn btn-treehouse">Go to My Bookings</button> <% end %>
 				</div>
 			</div>
