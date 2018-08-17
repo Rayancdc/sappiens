@@ -1,37 +1,32 @@
-<div class="index-box">
-
-  <div class="exp-container">
-    <div class="row">
-      <% if @bookings.count > 0 %>
-        <% @bookings.each do |booking| %>
-          <div class="col-md-12">
-            <div class="experience-card">
-              <div class="card-image"></div>
-              <div class="card-info">
-                <h2> <%= booking.experience.name %></h2>
-                <p> <%= booking.experience.company.name %> </p>
-              </div>
-              <div class="card-price">
-                <strong><%= number_to_currency(booking.experience.price_cents/100.0, { unit: "R$", separator: "," }) %> / day </strong>
-                <%= link_to "More Info", booking_path(booking), class: "btn btn-success" %>
-              </div>
-
-
-            </div>
-          </div>
-        <% end %>
-      <% else %>
-        <div class="sorry-box">
-          <h2>Sorry, we coudn't find any bookings for <%= params[:query] %> </h2>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="map-wrapper">
-    <div id="map" style="width: 100%; height: 100%;" data-markers="<%= @markers.to_json %>" ></div>
-  </div>
-
+<div class="container">
+  <h1 class="text-center mobile-bookings">My Bookings</h1>
+  <h3 class="text-center"><%= link_to "Choose your next experience", root_path %></h3>
 </div>
 
+<div class="container">
+ <div class="row">
+   <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to booking_path(booking) do  %>
+        <div class="card-my-bookings">
+        <div class= "ratings-my">
+          <% 4.times do %>
+        <%# (booking.rating).times do %>
+          <span class="fa fa-star checked"></span>
+          <% end %>
+        <%# (5 - booking.rating).times do %>
+          <span class="fa fa-star"></span>
+        <%# end %>
+        </div>
+       <h4><%= booking.event.experience.career %></h4>
+       <p> Date: <%= booking.event.date %></p>
+       <p> Address: <%= booking.event.experience.company.address %></p>
+      </div>
+      <% end %>
+    </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
 
