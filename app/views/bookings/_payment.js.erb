@@ -24,9 +24,9 @@ button.addEventListener('click', function() {
           window.location.href = `/bookings/${data.booking_id}`
         },
         error: function(data) {
-          console.log(data.errors)
+          console.log(data.errors);
         }
-      })
+      });
     },
     error: function(err) {
       console.log(err);
@@ -42,10 +42,7 @@ button.addEventListener('click', function() {
         error: function(data) {
           console.log(data.errors)
         }
-      })
-    }
-    },
-    close: function() {
+      });
     }
 });
 
